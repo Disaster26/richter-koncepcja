@@ -26,7 +26,7 @@
     var bt=d.querySelectorAll('.kar-btn button');
     bt.forEach(function(x){x.addEventListener('click',function(){t.scrollBy({left:kr()*+x.dataset.k,behavior:'smooth'});});});
     function stan(){if(bt.length){bt[0].disabled=t.scrollLeft<4;bt[1].disabled=t.scrollLeft+t.clientWidth>=t.scrollWidth-4;}}
-    t.addEventListener('scroll',stan,{passive:true});requestAnimationFrame(function(){requestAnimationFrame(stan);});
+    t.addEventListener('scroll',stan,{passive:true});
     var dn=false,sx=0,sl=0,ruch=0;
     t.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse')return;dn=true;ruch=0;sx=e.clientX;sl=t.scrollLeft;t.classList.add('ciag');});
     addEventListener('pointermove',function(e){if(!dn)return;var dx=e.clientX-sx;ruch=Math.max(ruch,Math.abs(dx));t.scrollLeft=sl-dx;});
